@@ -7,6 +7,8 @@ public class TestingMain {
     public static void main(String[] args) {
         SimpleUser simpleUser = new SimpleUser("theForumUser");
 
+        System.out.println("Testing user Name");
+
         String result = simpleUser.getUserName();
 
         if (result.equals("theForumUser")) {
@@ -15,27 +17,29 @@ public class TestingMain {
             System.out.println("Error!");
         }
 
-        Calculator calculator = new Calculator(5,2);
+        Calculator calculator = new Calculator();
 
-        int resultAdd = calculator.add();
-        int resultSubtract = calculator.subtract();
+        System.out.println("\nTesting calculator: add");
 
-        if (resultAdd == calculator.getA() + calculator.getB()){
+        int resultAdd = calculator.add(5,9);
 
-            System.out.println("Test add is ok");
+        if(resultAdd == 5 + 9){
+            System.out.println("Test add ok");
 
         } else {
+            System.out.println("Error!");
 
-            System.out.println("Error");
         }
 
-        if (resultSubtract == calculator.getA() - calculator.getB()){
+        System.out.println("\nTesting calculator: subtract");
 
-            System.out.println("Test subtract is ok");
+        int resultSubtract = calculator.subtract(12,3);
+
+        if(resultSubtract == 12 - 5){
+            System.out.println("Test subtract ok");
 
         } else {
-
-            System.out.println("Error");
+            System.out.println("Error!");
 
         }
 
