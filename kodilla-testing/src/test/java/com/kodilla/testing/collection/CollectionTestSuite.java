@@ -44,7 +44,7 @@ public class CollectionTestSuite {
         ArrayList<Integer> listNumbers = OddNumbersExterminator.exterminate(list);
         System.out.println("Testing: " + list);
         //Then
-        Assertions.assertEquals(list, listNumbers);
+        Assertions.assertEquals(oddList, listNumbers);
 
     }
 }
