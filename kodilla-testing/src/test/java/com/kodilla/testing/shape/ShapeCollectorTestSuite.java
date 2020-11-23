@@ -10,8 +10,6 @@ import java.util.List;
 public class ShapeCollectorTestSuite {
 
     private static int testCounter = 0;
-    private Object List;
-    private Object Shape;
 
     @BeforeAll
     public static void beforeAllTests() {
