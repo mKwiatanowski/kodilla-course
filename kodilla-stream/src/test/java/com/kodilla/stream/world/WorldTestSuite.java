@@ -14,7 +14,7 @@ public class WorldTestSuite {
         Country germany = new Country("Germany", new BigDecimal(65000000L) );
         Country spain = new Country("Spain", new BigDecimal(40500000L));
         Country uk = new Country("UK", new BigDecimal(60600000L));
-        Country china = new Country("Cihna", new BigDecimal(1314500000L));
+        Country china = new Country("China", new BigDecimal(1314500000L));
         Country india = new Country("India", new BigDecimal(1095350000L));
         Country japan = new Country("Japan", new BigDecimal(12740000L));
         Country vietnam = new Country("Vietnam", new BigDecimal(85400000L));
@@ -50,8 +50,6 @@ public class WorldTestSuite {
 
         //Then
         Assertions.assertEquals(3336490000L, total);
-
-
 
     }
 }
