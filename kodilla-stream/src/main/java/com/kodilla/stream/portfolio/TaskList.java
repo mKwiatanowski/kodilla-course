@@ -13,7 +13,7 @@ public final class TaskList {
 
     }
 
-    public void addTask(Task task){
+    public void addTask(Task task) {
         tasks.add(task);
 
     }

@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -103,7 +105,35 @@ public class BoardTestSuite {
         Assertions.assertEquals(user, tasks.get(0).getAssignedUser());
         Assertions.assertEquals(user, tasks.get(1).getAssignedUser());
 
-
-
     }
+
+    @Test
+    public void testAddTaskListAverageWorkingOnTask(){
+        //Given
+        double avg;
+        Board project = prepareTestData();
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In Process"));
+
+        //When
+        int sumDays = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> Period.between(t.getCreated(), LocalDate.now()).getDays())
+                .reduce(0, (sum, current) -> sum += current);
+
+        long tasksQuantity = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .mapToLong(tl -> tl.getTasks().size())
+                .sum();
+
+        avg = (double) sumDays / tasksQuantity;
+
+
+
+        //Then
+        assertEquals(10.0, avg, 0.0001);
+    }
+
+
 }
