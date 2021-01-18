@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.allegro;
 
 public class Product {
 
- private String productName;
+    private String productName;
     private String productDescription;
     private double productPrice;
 
