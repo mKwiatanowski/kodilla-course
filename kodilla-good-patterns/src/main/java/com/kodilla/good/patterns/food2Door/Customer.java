@@ -1,11 +1,15 @@
-package com.kodilla.good.patterns.foof2Door;
+package com.kodilla.good.patterns.food2Door;
 
-public class Costomer {
+public class Customer {
 
     private String name;
 
-    public Costomer(String name) {
+    public Customer(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -13,7 +17,7 @@ public class Costomer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Costomer costomer = (Costomer) o;
+        Customer costomer = (Customer) o;
 
         return name.equals(costomer.name);
     }

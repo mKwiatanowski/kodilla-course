@@ -1,6 +1,6 @@
-package com.kodilla.good.patterns.foof2Door.product;
+package com.kodilla.good.patterns.food2Door.product;
 
-import com.kodilla.good.patterns.foof2Door.Product;
+import com.kodilla.good.patterns.food2Door.Product;
 
 public class ProductVegetables extends Product {
 

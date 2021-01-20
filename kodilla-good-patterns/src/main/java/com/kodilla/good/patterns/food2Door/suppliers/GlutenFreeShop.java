@@ -1,9 +1,10 @@
-package com.kodilla.good.patterns.foof2Door.suppliers;
+package com.kodilla.good.patterns.food2Door.suppliers;
 
-import com.kodilla.good.patterns.foof2Door.Costomer;
-import com.kodilla.good.patterns.foof2Door.Product;
-import com.kodilla.good.patterns.foof2Door.ProductFood;
-import com.kodilla.good.patterns.foof2Door.product.ProductGlutenFree;
+import com.kodilla.good.patterns.food2Door.Customer;
+import com.kodilla.good.patterns.food2Door.Product;
+import com.kodilla.good.patterns.food2Door.ProductFood;
+import com.kodilla.good.patterns.food2Door.product.ProductGlutenFree;
+import com.kodilla.good.patterns.food2Door.product.ProductMeat;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,14 +23,15 @@ public class GlutenFreeShop implements ProductFood {
     private Map<Product, Integer> productCreateList(){
         Map<Product, Integer> productList = new HashMap<>();
 
-        productList.put(new ProductGlutenFree("Cookies", "Cookies with nut"),15 );
+        productList.put(new ProductGlutenFree("Cookies", "Cookies with nut"),15);
+        productList.put(new ProductMeat("Beef","Red Meat"),6);
 
         return productList;
 
     }
 
     @Override
-    public boolean process(Costomer costomer, Map<Product, Integer> order) {
+    public boolean process(Customer costomer, Map<Product, Integer> order) {
         return inStock(order);
     }
 
