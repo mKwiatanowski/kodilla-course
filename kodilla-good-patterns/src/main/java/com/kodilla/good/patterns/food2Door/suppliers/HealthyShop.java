@@ -8,24 +8,21 @@ import com.kodilla.good.patterns.food2Door.product.ProductVegetables;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class HealthyShop implements ProductFood {
 
-    private Map<Product, Integer> productList;
-    private final String INACCASSIBLE = "Gluten Free Shot. We're sorry!, Product is inaccessible";
+    private Map<Product, Integer> products = new HashMap<>();
 
     public HealthyShop () {
-        productList = productCreateList();
+        products = productCreateList();
     }
 
     private Map<Product, Integer> productCreateList(){
-        Map<Product, Integer> productList = new HashMap<>();
 
-        productList.put(new ProductVegetables("Onion", true),13);
-        productList.put(new ProductMeat("Chicken breast", "Light and BIO"),99);
+        products.put(new ProductVegetables("Onion", true),13);
+        products.put(new ProductMeat("Chicken breast", "Light and BIO"),99);
 
-        return productList;
+        return products;
     }
 
     @Override
@@ -33,15 +30,5 @@ public class HealthyShop implements ProductFood {
         return false;
     }
 
-    private boolean inStock (Map<Product, Integer> order){
 
-        for (Map.Entry<Product, Integer> entry: order.entrySet()){
-            Optional<Integer> productQuantity = Optional.ofNullable(productList.get(entry.getKey()));
-            if (productQuantity.orElse(0) < entry.getValue()){
-                System.out.println(INACCASSIBLE);
-                return false;
-            }
-        }
-        return true;
-    }
 }
