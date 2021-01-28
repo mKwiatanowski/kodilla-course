@@ -10,7 +10,7 @@ public class OddNumbersExterminator {
         ArrayList<Integer> oddNumbers = new ArrayList<>();
 
         if(numbers.isEmpty()){
-            return numbers;
+            return oddNumbers;
 
         } else {
             for(Integer number: numbers){
@@ -19,7 +19,7 @@ public class OddNumbersExterminator {
 
                 }
             }
-            return numbers;
+            return oddNumbers;
         }
     }
 }

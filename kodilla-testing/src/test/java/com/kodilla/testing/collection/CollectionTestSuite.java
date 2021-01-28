@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @DisplayName("List test")
 public class CollectionTestSuite {
@@ -38,12 +39,12 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
         //Given
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
-        ArrayList<Integer> oddList = new ArrayList<>(Arrays.asList(2,4,6,8,10));
+        List<Integer> oddList = Arrays.asList(2,4,6,8,10);
         //When
         ArrayList<Integer> listNumbers = OddNumbersExterminator.exterminate(list);
         System.out.println("Testing: " + list);
         //Then
-        Assertions.assertEquals(list, listNumbers);
+        Assertions.assertEquals(oddList, listNumbers);
 
     }
 }
