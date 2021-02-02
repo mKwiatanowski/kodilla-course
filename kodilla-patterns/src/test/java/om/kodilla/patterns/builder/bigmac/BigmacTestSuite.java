@@ -1,4 +1,4 @@
-package om.kodilla.patterns.builder;
+package om.kodilla.patterns.builder.bigmac;
 
 import com.kodilla.patterns.builder.bigmac.Bigmac;
 import org.junit.jupiter.api.Assertions;
