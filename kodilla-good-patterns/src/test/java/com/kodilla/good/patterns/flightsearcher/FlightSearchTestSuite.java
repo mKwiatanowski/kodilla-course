@@ -1,15 +1,16 @@
 package com.kodilla.good.patterns.flightsearcher;
 
 
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -19,7 +20,7 @@ public class FlightSearchTestSuite {
     private static DataBase dataBaseMock;
     private static Set<Airport> availableFlight;
 
-    @BeforeClass
+    @BeforeEach
     public static void beforeClass(){
         dataBaseMock = mock(DataBase.class);
         serviceFlight = new ServiceFlight(dataBaseMock);
@@ -51,7 +52,7 @@ public class FlightSearchTestSuite {
         Set<Airport> result = serviceFlight.availableFlightsFrom(airportDeparture);
 
         //Then
-        Assert.assertEquals(expected, result);
+        assertEquals(expected, result);
 
     }
 
@@ -65,7 +66,7 @@ public class FlightSearchTestSuite {
         Set<Airport> result = serviceFlight.availableFlightsFrom(airportDeparture);
 
         //Then
-        Assert.assertEquals(expected, result);
+        assertEquals(expected, result);
 
     }
 
@@ -81,7 +82,7 @@ public class FlightSearchTestSuite {
         Set<Airport> result = serviceFlight.availableFlightsTo(airportDeparture);
 
         //Then
-        Assert.assertEquals(expected, result);
+        assertEquals(expected, result);
     }
 
     @Test
@@ -95,7 +96,7 @@ public class FlightSearchTestSuite {
         Set<Airport> result = serviceFlight.availableFlightsTo(airportDeparture);
 
         //Then
-        Assert.assertEquals(expected, result);
+        assertEquals(expected, result);
     }
 
     @Test
@@ -115,7 +116,7 @@ public class FlightSearchTestSuite {
         Set<List<Airport>> result = serviceFlight.availableConnectingFlights(departureAirport, arrivalAirport);
 
         //Then
-        Assert.assertEquals(expected, result);
+        assertEquals(expected, result);
 
     }
 
@@ -131,7 +132,7 @@ public class FlightSearchTestSuite {
         Set<List<Airport>> result = serviceFlight.availableConnectingFlights(departureAirport, arrivalAirport);
 
         //Then
-        Assert.assertEquals(expected, result);
+        assertEquals(expected, result);
 
     }
 

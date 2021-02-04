@@ -13,7 +13,7 @@ public class BoardConfig {
     }
 
     @Bean
-//    @Scope("prototype")
+    @Scope("prototype")
     public TaskList getTaskList() {
         return new TaskList();
     }
