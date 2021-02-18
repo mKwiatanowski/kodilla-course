@@ -6,12 +6,14 @@ import com.kodilla.hibernate.invoice.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 
 
 @SpringBootTest
@@ -20,6 +22,7 @@ public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
 
+    @Transactional
     @Test
     void testInvoiceDaoSave(){
         //Given
@@ -50,12 +53,12 @@ public class InvoiceDaoTestSuite {
         Optional<Invoice> invoiceReadFromDB = invoiceDao.findById(invoiceId);
 
         //Then
-        Assertions.assertTrue(invoiceReadFromDB.isPresent());
-        Assertions.assertNotEquals(0, invoiceReadFromDB.get().getId());
-        Assertions.assertEquals(3, invoiceReadFromDB.get().getItems().size());
+        assertTrue(invoiceReadFromDB.isPresent());
+        assertNotEquals(0, invoiceReadFromDB.get().getId());
+        assertEquals(3, invoiceReadFromDB.get().getItems().size());
 
         //CleanUp
-        invoiceDao.deleteById(invoiceId);
+        invoiceDao.deleteAll();
     }
 
 
