@@ -65,7 +65,7 @@ import org.junit.jupiter.api.Assertions;
             //do nothing
         }
     }
-
+/*
     @Test
     public void testQueriesFindLastNameByString() {
         //Given
@@ -89,7 +89,9 @@ import org.junit.jupiter.api.Assertions;
         employeeDao.deleteById(johnSmithId);
         employeeDao.deleteById(stephanieClarksonId);
     }
+    */
 
+/*
     @Test
     public void testQueriesFindCompanyNameBySubString() {
         //Given
@@ -113,4 +115,6 @@ import org.junit.jupiter.api.Assertions;
         companyDao.deleteById(softwareMachinesId);
         companyDao.deleteById(dataMaestersId);
     }
+    */
+
 }
